@@ -1,0 +1,120 @@
+{
+  "timeline_index": 36,
+  "planner": {
+    "Team Leader": {
+      "1": {
+        "task_id": "1",
+        "dependent_task_ids": [],
+        "instruction": "Create a detailed PRD for the AI voice bot demo application. Include market research on similar solutions, technical feasibility analysis, detailed feature specifications, user interface requirements, and integration requirements with the existing website https://onmsai.com/. Save the PRD at '/data/chats/osf57d/workspace/docs/voice_bot_demo_prd.json'",
+        "task_type": "general",
+        "code": "",
+        "result": "",
+        "is_success": false,
+        "is_finished": true,
+        "assignee": "Emma",
+        "start_at": 1742056549.5676324,
+        "end_at": 1742056698.672426
+      },
+      "current_task_id": "4",
+      "2": {
+        "task_id": "2",
+        "dependent_task_ids": [
+          "1"
+        ],
+        "instruction": "Design the system architecture for the AI voice bot demo application based on the PRD at '/data/chats/osf57d/workspace/docs/voice_bot_demo_prd.json'. Include component design, integration patterns, deployment strategy, and technical specifications. Save the design document at '/data/chats/osf57d/workspace/docs/voice_bot_demo_design.json'",
+        "task_type": "general",
+        "code": "",
+        "result": "",
+        "is_success": false,
+        "is_finished": true,
+        "assignee": "Bob",
+        "start_at": 1742056698.6840823,
+        "end_at": 1742056778.3634589
+      },
+      "3": {
+        "task_id": "3",
+        "dependent_task_ids": [
+          "2"
+        ],
+        "instruction": "Develop the AI voice bot demo application based on the system design at '/data/chats/osf57d/workspace/docs/voice_bot_demo_design.json'. Use React, JavaScript, and Tailwind CSS. Implement voice interaction features, multiple bot interfaces, embedding functionality, and customizable UI. Deploy the application and provide documentation for integration.",
+        "task_type": "general",
+        "code": "",
+        "result": "",
+        "is_success": false,
+        "is_finished": true,
+        "assignee": "Alex",
+        "start_at": 1742056778.382474,
+        "end_at": 1742057178.3422947
+      },
+      "4": {
+        "task_id": "4",
+        "dependent_task_ids": [
+          "3"
+        ],
+        "instruction": "Deploy the fixed version of the AI voice bot demo with corrected image paths through the preview app viewer. Ensure images are displaying correctly at both URLs:\n- Development: https://voice-bot-demo-5kbg8d-osf57d-6c4db0.mgx.dev\n- Production: https://voice-bot-demo-5dj4ex-v1.mgx.world\nTest all features including image loading, voice interaction, and embedding functionality.",
+        "task_type": "general",
+        "code": "",
+        "result": "",
+        "is_success": false,
+        "is_finished": false,
+        "assignee": "Alex",
+        "start_at": 1742057178.3423028
+      }
+    }
+  },
+  "gallery_last_file": {},
+  "timeline_status": {
+    "1": 1,
+    "2": 1,
+    "3": 1,
+    "4": 1,
+    "5": 1,
+    "6": 1,
+    "7": 1,
+    "8": 1,
+    "9": 1,
+    "10": 1,
+    "11": 1,
+    "12": 1,
+    "14": 1,
+    "15": 1,
+    "16": 1,
+    "17": 1,
+    "18": 1,
+    "19": 1,
+    "20": 1,
+    "21": 1,
+    "22": 0,
+    "23": 1,
+    "24": 1,
+    "25": 1,
+    "26": 1,
+    "27": 1,
+    "28": 1,
+    "30": 1,
+    "32": 1,
+    "33": 1,
+    "34": 1,
+    "35": 1,
+    "36": 1
+  },
+  "preview_servers": {
+    "95f8f08e-6813-418e-ab1a-f911a76c4db0": {
+      "role": "Alex",
+      "port": 5173,
+      "subdomain": "voice-bot-demo-5kbg8d-osf57d-6c4db0",
+      "server": "90a9dc2b-bb5c-4862-94ec-7e48ec625b01",
+      "cmd": "pnpm i && pnpm run lint && pnpm run dev",
+      "timeline_index": 22,
+      "version": "v1",
+      "status": "success",
+      "logs": []
+    }
+  },
+  "deploy": {
+    "proj_name": "",
+    "version": 1,
+    "deploy_url": "https://voice-bot-demo-5dj4ex-v1.mgx.world"
+  },
+  "next_version": "v4"
+}

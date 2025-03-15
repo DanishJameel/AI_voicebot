@@ -1,0 +1,74 @@
+classDiagram
+    class VoiceBotApp {
+        -config: AppConfig
+        -botManager: BotManager
+        -voiceManager: VoiceManager
+        +initialize()
+        +startApp()
+        +stopApp()
+    }
+
+    class BotManager {
+        -bots: Map<string, Bot>
+        -activeBot: Bot
+        +loadBots()
+        +getBot(id: string): Bot
+        +switchBot(id: string)
+        +listBots(): Bot[]
+    }
+
+    class Bot {
+        -id: string
+        -name: string
+        -description: string
+        -model: BotModel
+        -status: BotStatus
+        +initialize()
+        +processInput(text: string): string
+        +getResponse(): string
+        +updateStatus(status: BotStatus)
+    }
+
+    class VoiceManager {
+        -stream: MediaStream
+        -recorder: MediaRecorder
+        -speechRecognition: SpeechRecognition
+        -speechSynthesis: SpeechSynthesis
+        +startRecording()
+        +stopRecording()
+        +processAudio(audio: Blob)
+        +synthesizeSpeech(text: string)
+    }
+
+    class EmbedManager {
+        -container: HTMLElement
+        -config: EmbedConfig
+        -messageHandler: PostMessageHandler
+        +generateEmbedCode(): string
+        +initializeEmbed()
+        +handleResize()
+    }
+
+    class WebSocketManager {
+        -connection: WebSocket
+        -status: ConnectionStatus
+        +connect()
+        +disconnect()
+        +sendMessage(message: Message)
+        +onMessage(callback: Function)
+    }
+
+    class UIController {
+        -elements: Map<string, HTMLElement>
+        -theme: ThemeConfig
+        +render()
+        +updateTheme(theme: ThemeConfig)
+        +handleInteraction(event: Event)
+    }
+
+    VoiceBotApp *-- BotManager
+    VoiceBotApp *-- VoiceManager
+    VoiceBotApp *-- EmbedManager
+    VoiceBotApp *-- WebSocketManager
+    VoiceBotApp *-- UIController
+    BotManager o-- Bot

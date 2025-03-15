@@ -1,0 +1,39 @@
+sequenceDiagram
+    participant U as User
+    participant App as VoiceBotApp
+    participant UI as UIController
+    participant BM as BotManager
+    participant VM as VoiceManager
+    participant WS as WebSocketManager
+    participant Bot as Bot
+    participant API as Speech API
+
+    U->>App: Open Application
+    App->>UI: initialize()
+    App->>BM: loadBots()
+    App->>WS: connect()
+    App->>VM: initialize()
+
+    U->>UI: Select Bot
+    UI->>BM: switchBot(id)
+    BM->>Bot: initialize()
+    Bot-->>UI: updateBotStatus
+
+    U->>UI: Start Voice Input
+    UI->>VM: startRecording()
+    VM->>API: streamAudio()
+    API-->>VM: text
+    VM->>Bot: processInput(text)
+    Bot->>WS: sendMessage()
+    WS-->>Bot: response
+    Bot->>VM: synthesizeSpeech(response)
+    VM->>U: playAudio()
+
+    U->>UI: Request Embed Code
+    UI->>App: generateEmbedCode()
+    App-->>U: embedCode
+
+    U->>UI: Close Application
+    UI->>VM: stopRecording()
+    UI->>WS: disconnect()
+    UI->>App: stopApp()

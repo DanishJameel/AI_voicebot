@@ -1,12 +1,5 @@
 {
-  "builds": [
-    {
-      "src": "react_template/package.json",
-      "use": "@vercel/static-build",
-      "config": { "distDir": "react_template/dist" }
-    }
-  ],
-  "routes": [
-    { "src": "/(.*)", "dest": "/index.html" }
-  ]
+  "version": 2,
+  "routes": [{ "src": "/(.*)", "dest": "/index.html" }],
+  "builds": [{ "src": "package.json", "use": "@vercel/static-build" }]
 }
